@@ -1,0 +1,96 @@
+/*--------------------------------------------------------------
+   СТРАНИЦА "О НАС"
+--------------------------------------------------------------*/
+
+.a-top {
+  
+  img {
+    float: left;
+  }
+  
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  
+  h1, .name {
+    font-size: 16px;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 10px;
+    
+    &:after {
+      border-top: 1px solid @brick;
+      content: "";
+      display: block;
+      margin-top: 8px;
+      width: 64px;
+      margin-left: 128px;
+    }
+  }
+  
+  p {
+    font-size: 12px;
+  }
+} //.a-icon
+
+.a-logo {
+  width: 64px;
+  margin-right: 64px;
+}
+
+.a-foto {
+  width: 72px;
+  margin-right: 56px;
+}
+
+.a-text {
+  margin-left: 128px;
+  width: 75%;
+} // .a-text
+
+
+.about-item {
+    border-bottom: 1px solid #ececec;
+    margin-bottom: 2em;
+    padding-bottom: 1em;
+}
+
+@media (max-width: 991px) {
+  .a-text {
+    width: calc(~"100% - 128px");
+    width: -moz-calc(~"100% - 128px");
+    width: -webkit-calc(~"100% - 128px");
+  }
+} //991
+
+@media (max-width: 767px) {
+  
+  .a-top {
+    
+    img {
+      margin-right: 10px;
+    }
+    
+    h1 {
+      padding-top: 16px;
+    }
+    
+    h1, .name {
+      &:after {
+        margin-left: 74px;
+      }
+    }
+  }
+  
+  .a-text {
+    margin-left: 0;
+    margin-top: 10px;
+    width: 100%;
+  }
+  
+  .a-foto {
+    width: 64px;
+  }
+} //767

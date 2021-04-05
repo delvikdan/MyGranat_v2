@@ -1,0 +1,55 @@
+/*--------------------------------------------------------------
+   СТРАНИЦА "УСЛУГИ"
+--------------------------------------------------------------*/
+.services-item {
+  margin-bottom: 55px;
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+  .headline a {
+    font-size: 16px;
+    color: @brick;
+    font-weight: 500;
+    &:hover,
+    &:focus {
+      color: @hover;
+      text-decoration: none;
+      opacity: 0.7;
+    }
+  }
+}
+
+.s-icon {
+  width: 64px;
+  float: left;
+  margin-right: 64px;
+}
+
+.s-text {
+  float: left;
+  width: 75%;
+}
+
+@media (max-width: 991px) {
+  .s-text {
+    width: calc(~"100% - 128px");
+    width: -moz-calc(~"100% - 128px");
+    width: -webkit-calc(~"100% - 128px");
+  }
+} //991
+@media (max-width: 767px) {
+  .services-item {
+    margin-bottom: 25px;
+  }
+  .s-icon {
+    width: 32px;
+    margin-right: 10px;
+  }
+  .s-text {
+    width: calc(~"100% - 42px");
+    width: -moz-calc(~"100% - 42px");
+    width: -webkit-calc(~"100% - 42px");
+  }
+} //767

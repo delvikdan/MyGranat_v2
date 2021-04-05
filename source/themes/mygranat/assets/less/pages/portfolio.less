@@ -1,0 +1,233 @@
+/*--------------------------------------------------------------
+   СТРАНИЦА "ПОРТФОЛИО"
+--------------------------------------------------------------*/
+
+.filters-gr {
+  position: relative;
+  
+  .gr {
+    background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0.05) 2%, rgba(255,255,255,1) 41%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.05) 2%,rgba(255,255,255,1) 41%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0.05) 2%,rgba(255,255,255,1) 41%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+    height: 100%;
+    width: 40px;
+    display: none;
+    
+    
+    @media (max-width: 991px) {
+      
+      display: block;
+      
+    }//991 
+    
+  }
+
+}
+
+
+
+.filtres-wrapper {
+  overflow-x: auto;
+  overflow-y: hidden;
+  margin-bottom: 20px;
+  
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+  
+  &::-webkit-scrollbar { width: 0 !important }
+
+  @media (max-width: 991px) {
+      
+    margin-bottom: 0px;
+      
+  }//991 
+  
+}
+
+
+.filtres {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  
+  li {
+    
+    a {
+      color: @overlay; 
+      transition: none 0s ease 0s;
+      
+    
+      &:hover, &:focus {
+        color: @hover;
+        text-decoration: none;
+      }
+    } 
+    
+    img {
+      width: 32px;
+    } 
+    
+    
+  } //li
+  
+  
+  
+  @media (max-width: 1199px) {
+ 
+    li {
+      a {
+        font-size: 13px;
+      }
+
+    }
+    
+  }//1199 
+  
+  
+  @media (max-width: 991px) {
+    width: 991px;
+    padding-right: 30px;
+      
+  }//991 
+  
+  
+}
+
+
+.portfolio-wrapper {
+  margin: 0 15px;
+  
+  [class^="col-"] {
+    padding: 0;
+  }
+  
+  @media (max-width: 991px) {
+    margin: 0;
+  } //991
+  
+  @media (max-width: 767px) {
+    [class^="portfolio-"] { 
+    margin: 0 0 16px 0;
+    }
+  } //767  
+ 
+} // .portfolio-wrapper 
+
+
+[class^="portfolio-"] {
+  margin: 8px;
+  position: relative;
+  background-size: cover;
+  background-position: center center;
+  background-color: #ececec;
+  padding: 8px;
+  overflow: hidden;
+  a {
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    font-size: 0;
+    opacity: 0;
+    text-indent: 200%;
+    white-space: nowrap;
+    z-index: 2;
+  }
+  
+  
+  p {
+    padding: 10px;
+    opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    
+    &:first-child {
+      -webkit-transition-delay: 0.05s;
+	    transition-delay: 0.05s;
+      font-size: 16px;
+      color: @brick;
+      font-weight: 500;
+      span {
+        font-size: 12px;
+        color:@overlay;
+      }
+    }
+    
+    &:nth-of-type(2) {
+      -webkit-transition-delay: 0.15s;
+	    transition-delay: 0.15s;      
+    }
+    &:nth-of-type(3) {
+      -webkit-transition-delay: 0.25s;
+	    transition-delay: 0.25s;
+      font-size: 12px;
+      color: @brick;
+      text-align: right;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
+  
+  &:after {
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ececec;
+    .transition();
+    opacity: 0;
+    
+  }
+  
+  &:hover {
+    
+    p {
+      opacity: 1;
+      -webkit-transform: translate3d(0, 0, 0);
+      transform: translate3d(0, 0, 0);  
+    }
+    
+    &:after {
+      opacity: 0.9;
+    }
+    
+  }
+  
+
+} // [class^="portfolio-"]
+
+
+
+.portfolio-item {
+  height: 270px;
+}
+
+.portfolio-item-featuted {
+  height: 540px;
+}
+
+
+

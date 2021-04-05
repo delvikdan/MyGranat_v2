@@ -1,0 +1,147 @@
+/*--------------------------------------------------------------
+   ГЛАВНАЯ СТРАНИЦА
+--------------------------------------------------------------*/
+
+
+/* портфолио */
+
+hr.border-brick {
+  border-bottom: 1px solid #9c2532;
+  border-top: 0 none;
+  margin: 0 0 60px;
+  padding-bottom: 52px;
+  
+  @media (max-width: 767px) {
+    margin: 0 0 30px;
+    padding-bottom: 26px;
+  } //767
+}
+
+//высота длинного блока
+@brick-h: 560px;
+.brick-1 {
+  .bg-img('brick-1-bg.jpg');
+  height: @brick-h;
+}
+
+.brick-2 {
+  .bg-img('brick-2-bg.jpg');
+}
+
+.brick-3 {
+  .bg-img('brick-3-bg.jpg');
+}
+
+.brick-2,
+.brick-3 {
+  height: @brick-h/2;
+}
+
+[class^="brick-"] {
+  border: 1px solid #fff;
+  position: relative;
+  a {
+    background-color: @overlay;
+    background-color: fade(@overlay, 60%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    font-size: 14px;
+    &:hover {
+      background-color: fade(@overlay, 40%);
+    }
+    span {
+      position: absolute;
+      width: 100%;
+      padding: 1em;
+    }
+    .b-top {
+      top: 0;
+      left: 0;
+      img {
+        padding: 0 10px 0 0;
+      }
+    }
+    .b-bottom {
+      bottom: 0;
+      left: 0;
+      img {
+        float: right;
+        padding: 5px 0 0;
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  [class^="brick-"] {
+    height: @brick-h/2 - 100px;
+  }
+} //767
+
+
+/* блог */
+
+.blog-wrapper {
+  margin: 60px 0;
+  
+  @media (max-width: 767px) {
+    margin: 30px 0;
+  }
+}
+
+.blog-item {
+  margin-bottom: 2em;
+  padding-bottom: 2em;
+  border-bottom: 1px solid #ececec;
+}
+
+.article-title {
+  a {
+    font-size: 16px;
+    font-weight: 500;
+    color: @brick;
+    margin: 0 0 10px;
+    display: block;
+    &:hover,
+    &:focus {
+      opacity: 0.7;
+      text-decoration: none;
+      color: @hover;
+    }
+    &:after {
+      content: '';
+      border-top: 1px solid @brick;
+      display: block;
+      width: 64px;
+      margin-top: 10px;
+    }
+  }
+}
+
+.read-more {
+  display: block;
+  float: right;
+  width: 6px;
+}
+
+.more {
+  float: right;
+  font-size: 12px;
+  color: @brick;
+  &:hover,
+  &:focus {
+    opacity: 0.7;
+    text-decoration: none;
+  }
+}
+
+.excerpt {
+  width: 66.6667%;
+  @media (max-width: 767px) {
+    width: 100%;
+  }
+}
